@@ -1,0 +1,285 @@
+
+*{
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;    
+}
+body{
+    background-color: #14BDAC;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#whoTurn{
+    font-size: 6vw;
+    color: red;
+    font-weight:bolder ;
+}
+/* 規則 */
+#rule{
+    position: fixed;
+    width: 60vw;
+    background-color: rgba(0, 0, 0, .7);
+    border-radius: 15px;
+    z-index: 100;
+}
+#rule *{
+    color: white;
+}
+#rule h2{
+    text-align: center;
+    margin: 2.5vw auto;
+    font-size: 5vw;
+}
+#rule h3{
+    margin-bottom: 2vw;
+    margin-left: 1vw;
+    font-size: 3.5vw;
+}
+#rule p{
+    text-indent: 1.5vw;
+    margin: 2vw;
+    font-size: 3vw;
+    line-height: 2;
+
+}
+#startBtn{
+    display: block;
+    margin: 2vw auto;
+    padding: 2vw 6vw;
+    border-radius: 20px;
+    font-size: 5vw;
+    color: black;
+}
+
+
+
+hr{
+    background-color: red;
+    height:100%;
+    width: 10px;
+    position: absolute;
+}
+#lineA{
+    transform: rotate(90deg);
+    height: 100%;
+    top: -35%;
+    left: 50%;
+    display: none;
+    
+    
+}
+#lineB{
+    transform: rotate(90deg);
+    height: 100%;
+    left: 50%;
+    display: none;
+}
+#lineC{
+    transform: rotate(90deg);
+    height: 100%;
+    top: 35%;
+    left: 50%;
+    display: none;
+}
+#lineD{
+    left: 15%;
+    display:none;
+}
+#lineE{
+    left: 50%;
+    display:none;
+}
+#lineF{
+    left: 85%;
+    display:none;
+}
+#lineG{
+    transform: rotate(45deg);
+    height: 100%;
+    bottom: 0;
+    right: 50%;
+    display:none;
+}
+#lineH{
+    transform: rotate(135deg);
+    height: 100%;
+    bottom: 0;
+    right: 50%;
+    display:none;
+}
+
+h1{
+    text-align: center;
+}
+#TicTacToe{
+    position: relative;
+    width: 90vw;
+    height: 90vw;
+    display: flex;
+    flex-wrap: wrap;
+}
+#TicTacToe i{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30vw;
+    height: 30vw;
+    font-size: 10vw;
+    
+}
+#TicTacToe i:hover{
+    background-color: #ff7675;
+}
+
+#a,
+#b,
+#d,
+#e{
+    
+    border-right: 2vw solid rgba(0, 0, 0, .5);
+    border-bottom: 2vw solid rgba(0, 0, 0, .5);
+}
+#c,
+#f{
+    border-bottom: 2vw solid rgba(0, 0, 0, .5);
+}
+
+#g,
+#h{
+    border-right: 2vw solid rgba(0, 0, 0, .5);
+}
+
+
+/* 提示訊息style */
+#endGameAlert{
+    display: none;
+    position: fixed;
+    background-color: rgba(0, 0, 0, .7);
+}
+#winner{
+    color: red;
+}
+#btnContainer *{
+    display: block;
+    margin: 5vw 3vw;
+    padding: 4vw;
+    font-size: 4vw;
+    font-weight: bolder;
+    border-radius: 10px;
+}
+
+#btnContainer{
+    display: flex;
+    justify-content: center;
+}
+
+#winner{
+    font-size: 12vw;
+    margin: 3vw 10vw;
+}
+#againBtn{
+    cursor: pointer;
+}
+
+
+@media screen and (min-width: 830px) {
+    /* rule */
+    #whoTurn{
+        font-size: 4vw;
+        color: red;
+        font-weight:bolder ;
+    }
+    #rule{
+        position: fixed;
+        max-width: 600px;
+        width: 60vw;
+        background-color: rgba(0, 0, 0, .7);
+        border-radius: 15px;
+        z-index: 100;
+    }
+    #rule *{
+        color: white;
+    }
+    #rule h2{
+        text-align: center;
+        margin: 1vw auto;
+        font-size: 3vw;
+    }
+    #rule h3{
+        margin-bottom: 2vw;
+        margin-left: 2vw;
+        font-size: 2.5vw;
+    }
+    #rule p{
+        text-indent: 1.5vw;
+        margin: 1vw;
+        font-size: 2vw;
+        line-height: 2;
+    
+    }
+    #startBtn{
+        cursor: pointer;
+        display: block;
+        margin: 2vw auto;
+        padding: 2vw 6vw;
+        border-radius: 20px;
+        font-size: 2vw;
+        color: black;
+    }
+
+
+    h1{
+        font-size: 5rem;
+        
+    }
+    #TicTacToe{
+        max-width: 600px;
+        max-height: 600px;
+        width: 90vw;
+        height: 90vh;
+    }
+    #TicTacToe i{
+        cursor: pointer;
+        max-width: 200px;
+        max-height: 200px;
+        width: 30vw;
+        height: 30vh;
+        font-size: 7rem;
+    }
+    #a,
+    #b,
+    #d,
+    #e{
+        border-right: 1.5rem solid rgba(0, 0, 0, .5);
+        border-bottom: 1.5rem solid rgba(0, 0, 0, .5);
+    }
+    #c,
+    #f{
+        border-bottom: 1.5rem solid rgba(0, 0, 0, .5);
+    }
+
+    #g,
+    #h{
+        border-right: 1.5rem solid rgba(0, 0, 0, .5);
+    }
+
+    #btnContainer *{
+        display: block;
+        margin: 1vw 2vw;
+        padding: 2vw;
+        font-size: 2vw;
+        font-weight: bolder;
+        border-radius: 10px;
+    }
+    #winner{
+        font-size: 5vw;
+        margin: 1vw 5vw;
+    }
+
+    
+  }

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://www.seekpng.com/png/full/205-2056226_image-tic-tac-toe-no-background.png" type="image/x-icon" />
+
+    <title>Tic-Tac-Toe</title>
+</head>
+<body>
+    <!-- <i id="circle" class="fa-solid fa-o"></i> -->
+    <!-- <i class="fa-solid fa-x"></i> -->
+    <div id="rule">
+        <h2>井字遊戲</h2>
+        <h3>遊戲規則 :</h3>
+        <p>兩個玩家，一個打圈(◯)，一個打叉(✗)，輪流在3乘3的格上打自己的符號，最先以橫、直、斜連成一線則為勝。如果雙方都下得正確無誤，將得和局。</p>
+        <button id="startBtn">Start</button>
+    </div>
+
+    <h1>Tic-Tac-Toe</h1>
+    <div id="whoTurn">輪到 O</div>
+    
+    <div id="TicTacToe">
+        <i id="a"></i>
+        <i id="b"></i>
+        <i id="c"></i>
+        <i id="d"></i>
+        <i id="e"></i>
+        <i id="f"></i>
+        <i id="g"></i>
+        <i id="h"></i>
+        <i id="i"></i>
+        <hr id="lineA">
+        <hr id="lineB">
+        <hr id="lineC">
+        <hr id="lineD">
+        <hr id="lineE">
+        <hr id="lineF">
+        <hr id="lineG">
+        <hr id="lineH">
+    </div>
+    <div id="endGameAlert">
+        <h2 id="winner"></h2>
+        <div id="btnContainer">
+            <button id="againBtn">Again</button>
+        </div>
+    </div>
+<script src="script.js"></script>
+<script src="https://kit.fontawesome.com/3b9660ae0a.js" crossorigin="anonymous"></script>
+</body>
+</html>
