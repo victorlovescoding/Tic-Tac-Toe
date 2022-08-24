@@ -33,8 +33,13 @@ startBtn.addEventListener('click',()=>{
     rule.style.display="none"
     
 })
-TicTacToe.addEventListener('click',(e)=>{  
+
+TicTacToe.addEventListener('mousedown',(e)=>{  
+    
     addSignToBoard(e)
+    if(TicTacToe.className="fa-solid fa-o"){ //避免TicTacToe新增O造成跑版
+        TicTacToe.className=""
+    }
      checkOWin()
      checkXWin()
      
