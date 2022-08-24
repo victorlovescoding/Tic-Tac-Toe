@@ -156,8 +156,8 @@ function checkXWin(){
 }
 
 
-function checkEven(num){
-    if(a.className!="" && b.className!="" && c.className!="" && d.className!=""  && e.className!="" && f.className!="" && g.className!="" && h.className!="" && i.className!="" &&`${endGameAlert.style.display="none"}`){
+function checkEven(){
+    if(a.className!="" && b.className!="" && c.className!="" && d.className!=""  && e.className!="" && f.className!="" && g.className!="" && h.className!="" && i.className!="" &&`${lineA.style.display="none"}`&&`${lineB.style.display="none"}`&&`${lineC.style.display="none"}`&&`${lineD.style.display="none"}`&&`${lineE.style.display="none"}`&&`${lineF.style.display="none"}`&&`${lineG.style.display="none"}`&&`${lineG.style.display="none"}`){
         
         endGameAlert.style.display="block"
         winner.textContent="平手!"
