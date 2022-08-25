@@ -29,6 +29,7 @@ const TicTacToe = document.getElementById('TicTacToe')
 const winnerContainer = document.getElementById('winnerContainer')
 
 let num = 0
+
 startBtn.addEventListener('click',()=>{
     rule.style.display="none"
     
@@ -37,7 +38,7 @@ startBtn.addEventListener('click',()=>{
 TicTacToe.addEventListener('mousedown',(e)=>{  
     
     addSignToBoard(e)
-    checkOWin(num)
+    checkOWin()
     checkXWin(num)
     restart()
  
@@ -61,7 +62,7 @@ function addSignToBoard(e){
 }
 
 
-function checkOWin(num){
+function checkOWin(){
     if(a.className==="fa-solid fa-o" && b.className==="fa-solid fa-o" && c.className==="fa-solid fa-o"){ //check O
         lineA.style.display="block"
         endGameAlert.style.display="block"
@@ -174,6 +175,11 @@ function restart(){
     
     againBtn.addEventListener('click',()=>{
         num = 0 
+        if(num%2 == 0){  
+            whoTurn.innerHTML="輪到 O"   
+        }else if(num%2 !== 0){
+            whoTurn.innerHTML="輪到 X"   
+        }
         endGameAlert.style.display="none"
         a.className=""
         b.className=""
