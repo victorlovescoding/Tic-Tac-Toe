@@ -8,7 +8,8 @@ const e = document.getElementById('e')
 const f = document.getElementById('f')
 const g = document.getElementById('g')
 const h = document.getElementById('h')
-const i = document.getElementById('i')
+const allSing = document.querySelectorAll('i')
+const line = document.querySelector('hr')
 const lineA = document.getElementById('lineA')
 const lineB = document.getElementById('lineB')
 const lineC = document.getElementById('lineC')
@@ -27,7 +28,6 @@ const winner = document.getElementById('winner')
 const TicTacToe = document.getElementById('TicTacToe')
 const winnerContainer = document.getElementById('winnerContainer')
 
-const box = document.querySelectorAll('.box')
 let num = 0
 startBtn.addEventListener('click',()=>{
     rule.style.display="none"
@@ -37,31 +37,31 @@ startBtn.addEventListener('click',()=>{
 TicTacToe.addEventListener('mousedown',(e)=>{  
     
     addSignToBoard(e)
-    if(TicTacToe.className="fa-solid fa-o"){ //避免TicTacToe新增O造成跑版
-        TicTacToe.className=""
-    }
-     checkOWin()
-     checkXWin()
+    checkOWin(num)
+    checkXWin(num)
+    restart()
+ 
      
-     
-     checkEven(num)
-     num++
-     restart(num)
+    
+    
+    
       
  })
 
 function addSignToBoard(e){
     if(num%2 == 0 && e.target.className===""){  
         whoTurn.innerHTML="輪到 X"   
-        e.target.className="fa-solid fa-o"       
+        e.target.className="fa-solid fa-o"
+        num++     
     }else if(num%2 !== 0 && e.target.className===""){
         whoTurn.innerHTML="輪到 O"   
-        e.target.className="fa-solid fa-x"    
+        e.target.className="fa-solid fa-x"
+        num++  
     }
 }
 
 
-function checkOWin(){
+function checkOWin(num){
     if(a.className==="fa-solid fa-o" && b.className==="fa-solid fa-o" && c.className==="fa-solid fa-o"){ //check O
         lineA.style.display="block"
         endGameAlert.style.display="block"
@@ -106,7 +106,7 @@ function checkOWin(){
     }
 }
 
-function checkXWin(){
+function checkXWin(num){
     if(a.className==="fa-solid fa-x" && b.className==="fa-solid fa-x" && c.className==="fa-solid fa-x"){ //check O
         lineA.style.display="block"
         endGameAlert.style.display="block"
@@ -150,6 +150,9 @@ function checkXWin(){
         endGameAlert.style.display="block"
         winner.textContent="X Win!"
         num = 0
+    }else if(num===9){ //如果x O都沒有連成一直線且num是9就是even
+        checkEven()
+        restart()
     }
     
 
@@ -157,34 +160,20 @@ function checkXWin(){
 
 
 function checkEven(){
-    if(a.className!="" && b.className!="" && c.className!="" && d.className!=""  && e.className!="" && f.className!="" && g.className!="" && h.className!="" && i.className!="" &&`${lineA.style.display="none"}`&&`${lineB.style.display="none"}`&&`${lineC.style.display="none"}`&&`${lineD.style.display="none"}`&&`${lineE.style.display="none"}`&&`${lineF.style.display="none"}`&&`${lineG.style.display="none"}`&&`${lineG.style.display="none"}`){
+    if(allSing.className!="" && winner.textContent===""){
         
         endGameAlert.style.display="block"
         winner.textContent="平手!"
-        num = 0  
+         
     }
 
 }
 
-// function alertWinner(winner){
-//     const div =document.createElement('div')
-    
-//     div.id = "winnerContainer"
-//     div.innerHTML = `
-//     <h2 id="winner">${winner} <span>Win!</span></h2>
-//     <div id="btnContainer">
-//         <button id="okBtn">OK</button>
-//         <button id="againBtn">Again</button>
-//     </div>
-//     `
-//     endGameAlert.appendChild(div)
-    
-// }
-//e.target.innerHTML===0 || e.target.innerHTML===X
 
 function restart(){
     
-    againBtn.addEventListener('click',(num)=>{
+    againBtn.addEventListener('click',()=>{
+        num = 0 
         endGameAlert.style.display="none"
         a.className=""
         b.className=""
@@ -204,5 +193,7 @@ function restart(){
         lineF.style.display="none"
         lineG.style.display="none"
         lineH.style.display="none"
+
+        winner.textContent=""//清空以便even函式判斷
     })
 }
